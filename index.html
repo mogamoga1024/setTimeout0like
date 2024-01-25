@@ -7,24 +7,47 @@
   <link rel="stylesheet" href="style.css">
   <script src="setZeroTimeout.js"></script>
   <script src="setImmediateLike.js"></script>
+  <script src="run.js"></script>
 </head>
 <body>
-  <h2>1から10000000までの和！</h2>
-  <b>setTimeout(fn, 0)</b>
-  <progress id="progress1" value="0" max="100"></progress>
-  <div id="result1"></div>
-  <b>setZeroTimeout(fn)</b>
-  <progress id="progress2" value="0" max="100"></progress>
-  <div id="result2"></div>
-  <b>wait0Script(fn)</b>
-  <progress id="progress3" value="0" max="100"></progress>
-  <div id="result3"></div>
-  <b>wait0FileReader1(fn)</b>
-  <progress id="progress4" value="0" max="100"></progress>
-  <div id="result4"></div>
-  <b>wait0FileReader2(fn)</b>
-  <progress id="progress5" value="0" max="100"></progress>
-  <div id="result5"></div>
+  <h2>1から100000までの和！</h2>
+  <div>
+    <div>
+      <input type="checkbox" id="chkSetTimeout" checked><label for="chkSetTimeout">setTimeout(fn, 0)</label>
+      <input type="checkbox" id="chkSetZeroTimeout" checked><label for="chkSetZeroTimeout">setZeroTimeout(fn)</label>
+      <input type="checkbox" id="chkWait0Script"><label for="chkWait0Script">wait0Script(fn)</label>
+    </div>
+    <div>
+      <input type="checkbox" id="chkWait0FileReader1"><label for="chkWait0FileReader1">wait0FileReader1(fn)</label>
+      <input type="checkbox" id="chkWait0FileReader2"><label for="chkWait0FileReader2">wait0FileReader2(fn)</label>
+    </div>
+  </div>
+  <button id="run" onclick="run()">実行！</button><br>
+  <div id="setTimeoutResult">
+    <b>setTimeout(fn, 0)</b>
+    <progress class="progress" value="0" max="100"></progress>
+    <div class="result"></div>
+  </div>
+  <div id="setZeroTimeoutResult">
+    <b>setZeroTimeout(fn)</b>
+    <progress class="progress" value="0" max="100"></progress>
+    <div class="result"></div>
+  </div>
+  <div id="wait0ScriptResult">
+    <b>wait0Script(fn)</b>
+    <progress class="progress" value="0" max="100"></progress>
+    <div class="result"></div>
+  </div>
+  <div id="wait0FileReader1Result">
+    <b>wait0FileReader1(fn)</b>
+    <progress class="progress" value="0" max="100"></progress>
+    <div class="result"></div>
+  </div>
+  <div id="wait0FileReader2Result">
+    <b>wait0FileReader2(fn)</b>
+    <progress class="progress" value="0" max="100"></progress>
+    <div class="result"></div>
+  </div>
   <hr>
   <h2>UIが固まらないかの実験</h2>
   <div class="marquee-container">

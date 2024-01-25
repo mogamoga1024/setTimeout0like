@@ -1,88 +1,42 @@
 
-// const MAX_NUM = 10000000;
-const MAX_NUM = 100000;
+const chkSetTimeout = document.querySelector("#chkSetTimeout");
+const chkSetZeroTimeout = document.querySelector("#chkSetZeroTimeout");
+const chkWait0Script = document.querySelector("#chkWait0Script");
+const chkWait0FileReader1 = document.querySelector("#chkWait0FileReader1");
+const chkWait0FileReader2 = document.querySelector("#chkWait0FileReader2");
 
-(function() {
-    const domResult = document.querySelector("#result1");
-    const dommProgress = document.querySelector("#progress1");
-    let num = 1;
-    let result = 0;
-    setTimeout(function loop() {
-        result += num;
-        domResult.innerText = result;
-        dommProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
-        if (num++ < MAX_NUM) {
-            setTimeout(loop, 0);
-        }
-    }, 0);
-})();
+const setTimeoutResult = document.querySelector("#setTimeoutResult");
+const setZeroTimeoutResult = document.querySelector("#setZeroTimeoutResult");
+const wait0ScriptResult = document.querySelector("#wait0ScriptResult");
+const wait0FileReader1Result = document.querySelector("#wait0FileReader1Result");
+const wait0FileReader2Result = document.querySelector("#wait0FileReader2Result");
 
-(function() {
-    const domResult = document.querySelector("#result2");
-    const dommProgress = document.querySelector("#progress2");
-    let num = 1;
-    let result = 0;
-    setZeroTimeout(function loop() {
-        result += num;
-        domResult.innerText = result;
-        dommProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
-        if (num++ < MAX_NUM) {
-            setZeroTimeout(loop);
-        }
-    });
-})();
+display(setTimeoutResult, false);
+display(setZeroTimeoutResult, false);
+display(wait0ScriptResult, false);
+display(wait0FileReader1Result, false);
+display(wait0FileReader2Result, false);
 
-(function() {
-    const domResult = document.querySelector("#result3");
-    const dommProgress = document.querySelector("#progress3");
-    let num = 1;
-    let result = 0;
-    wait0Script(function loop() {
-        result += num;
-        domResult.innerText = result;
-        dommProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
-        if (num++ < MAX_NUM) {
-            wait0Script(loop);
-        }
-    });
-})();
+function run() {
+    display(setTimeoutResult, chkSetTimeout.checked);
+    display(setZeroTimeoutResult, chkSetZeroTimeout.checked);
+    display(wait0ScriptResult, chkWait0Script.checked);
+    display(wait0FileReader1Result, chkWait0FileReader1.checked);
+    display(wait0FileReader2Result, chkWait0FileReader2.checked);
 
-(function() {
-    const domResult = document.querySelector("#result4");
-    const dommProgress = document.querySelector("#progress4");
-    let num = 1;
-    let result = 0;
-    wait0FileReader1(function loop() {
-        result += num;
-        domResult.innerText = result;
-        dommProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
-        if (num++ < MAX_NUM) {
-            wait0FileReader1(loop);
-        }
-    });
-})();
+    if (chkSetTimeout.checked) setTimeoutRun();
+    if (chkSetZeroTimeout.checked) setZeroTimeoutRun();
+    if (chkWait0Script.checked) wait0ScriptRun();
+    if (chkWait0FileReader1.checked) wait0FileReader1Run();
+    if (chkWait0FileReader2.checked) wait0FileReader2Run();
+}
 
-(function() {
-    const domResult = document.querySelector("#result5");
-    const dommProgress = document.querySelector("#progress5");
-    let num = 1;
-    let result = 0;
-    wait0FileReader2(function loop() {
-        result += num;
-        domResult.innerText = result;
-        dommProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
-        if (num++ < MAX_NUM) {
-            wait0FileReader2(loop);
-        }
-    });
-})();
-
-(function() {
-
-})();
-
-(function() {
-
-})();
-
+function display(dom, shouldDispaly) {
+    if (shouldDispaly) {
+        dom.style.display = "";
+    }
+    else {
+        dom.style.display = "none";
+    }
+}
 
