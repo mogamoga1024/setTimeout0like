@@ -15,11 +15,20 @@
     <div>
       <input type="checkbox" id="chkSetTimeout" checked><label for="chkSetTimeout">setTimeout(fn, 0)</label>
       <input type="checkbox" id="chkSetZeroTimeout" checked><label for="chkSetZeroTimeout">setZeroTimeout(fn)</label>
+    </div>
+    <div>
       <input type="checkbox" id="chkWait0Script"><label for="chkWait0Script">wait0Script(fn)</label>
     </div>
     <div>
       <input type="checkbox" id="chkWait0FileReader1"><label for="chkWait0FileReader1">wait0FileReader1(fn)</label>
       <input type="checkbox" id="chkWait0FileReader2"><label for="chkWait0FileReader2">wait0FileReader2(fn)</label>
+    </div>
+    <div>
+      <input type="checkbox" id="chkWait0Image1"><label for="chkWait0Image1">wait0Image1(fn)</label>
+      <input type="checkbox" id="chkWait0Image2"><label for="chkWait0Image2">wait0Image2(fn)</label>
+    </div>
+    <div>
+      <input type="checkbox" id="chkWait0PostMessage"><label for="chkWait0PostMessage">wait0PostMessage(fn)</label>
     </div>
   </div>
   <button id="run" onclick="run()">実行！</button><br>
@@ -45,6 +54,21 @@
   </div>
   <div id="wait0FileReader2Result">
     <b>wait0FileReader2(fn)</b>
+    <progress class="progress" value="0" max="100"></progress>
+    <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
+  </div>
+  <div id="wait0Image1Result">
+    <b>wait0Image1(fn)</b>
+    <progress class="progress" value="0" max="100"></progress>
+    <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
+  </div>
+  <div id="wait0Image2Result">
+    <b>wait0Image2(fn)</b>
+    <progress class="progress" value="0" max="100"></progress>
+    <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
+  </div>
+  <div id="wait0PostMessageResult">
+    <b>wait0PostMessage(fn)</b>
     <progress class="progress" value="0" max="100"></progress>
     <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
   </div>

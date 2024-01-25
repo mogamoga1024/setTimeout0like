@@ -49,5 +49,8 @@ const setZeroTimeoutRun = createRunFunc(setZeroTimeout);
 const wait0ScriptRun = createRunFunc(wait0Script, "wait0Script");
 const wait0FileReader1Run = createRunFunc(wait0FileReader1, "wait0FileReader1");
 const wait0FileReader2Run = createRunFunc(wait0FileReader2, "wait0FileReader2");
+const wait0Image1Run = createRunFunc(wait0Image1, "wait0Image1");
+const wait0Image2Run = createRunFunc(wait0Image2, "wait0Image2");
+const wait0PostMessageRun = createRunFunc(wait0PostMessage, "wait0PostMessage");
 
 
