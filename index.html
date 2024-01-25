@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>setTimeout(fn, 0)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="setZeroTimeout.js"></script>
+</head>
+<body>
+  <h2>1から10000000までの和！</h2>
+  <b>setTimeout(fn, 0)</b>
+  <div id="result1"></div>
+  <b>setZeroTimeout(fn)</b>
+  <div id="result2"></div>
+  <hr>
+  <h2>UIが固まらないかの実験</h2>
+  <div class="marquee-container">
+    <div class="marquee">冷やし中華はじめました。</div>
+  </div>
+  <input id="num1" type="number" value="1">
+  <input id="num2" type="number" value="2">
+  <button onclick="document.querySelector('#num3').innerText = Number(document.querySelector('#num1').value) + Number(document.querySelector('#num2').value)">足す！</button>
+  <div id="num3"></div>
+  <button onclick="alert('Hello, World!!')">アラート！</button>
+  <script src="main.js"></script>
+</body>
+</html>
