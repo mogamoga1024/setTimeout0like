@@ -26,33 +26,38 @@
   <div id="setTimeoutResult">
     <b>setTimeout(fn, 0)</b>
     <progress class="progress" value="0" max="100"></progress>
-    <div class="result"></div>
+    <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
   </div>
   <div id="setZeroTimeoutResult">
     <b>setZeroTimeout(fn)</b>
     <progress class="progress" value="0" max="100"></progress>
-    <div class="result"></div>
+    <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
   </div>
   <div id="wait0ScriptResult">
     <b>wait0Script(fn)</b>
     <progress class="progress" value="0" max="100"></progress>
-    <div class="result"></div>
+    <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
   </div>
   <div id="wait0FileReader1Result">
     <b>wait0FileReader1(fn)</b>
     <progress class="progress" value="0" max="100"></progress>
-    <div class="result"></div>
+    <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
   </div>
   <div id="wait0FileReader2Result">
     <b>wait0FileReader2(fn)</b>
     <progress class="progress" value="0" max="100"></progress>
-    <div class="result"></div>
+    <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
   </div>
   <div style="margin-top: 8px;">
     超手抜き実装なんで、停止できません。<br>
     後、実行中に実行ボタン押さないように。<br>
     律儀にバグらないように実装するのはかなり面倒くさいからね。OK？<br>
     実行中に再実行したいときはページをリロードしましょう。<br>
+    また、複数のアルゴリズムと同時に比較したかったのですが、<br>
+    おそらく実行タイミングが足並み揃えられることがあるようで、大して意味がなかったかもしれません。<br>
+    （例えばsetZeroTimeoutResultとwait0ScriptResultは同時に実行すると同じ速度になるが、実際はsetZeroTimeoutResultのほうが速い。）<br>
+    厳密に速度が知りたいならひとつだけで実行してください。<br>
+    PC環境を想定しているのでスマホでUIがずれても知りません。<br>
   </div>
   <hr>
   <h2>UIが固まらないかの実験</h2>

@@ -3,79 +3,51 @@ const MAX_NUM = 100000;
 
 function setTimeoutRun() {
     const domResult = document.querySelector("#setTimeoutResult .result");
-    const dommProgress = document.querySelector("#setTimeoutResult .progress");
+    const domProgress = document.querySelector("#setTimeoutResult .progress");
+    const domTime = document.querySelector("#setTimeoutResult .time");
+    domTime.innerText = "";
     let num = 1;
     let result = 0;
+    const startTime = performance.now();
     setTimeout(function loop() {
         result += num;
         domResult.innerText = result;
-        dommProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
+        domProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
         if (num++ < MAX_NUM) {
             setTimeout(loop, 0);
+        }
+        else {
+            domTime.innerText = Math.floor((performance.now() - startTime) * 1000) / 1000 + "ms";
         }
     }, 0);
 }
 
-function setZeroTimeoutRun() {
-    const domResult = document.querySelector("#setZeroTimeoutResult .result");
-    const dommProgress = document.querySelector("#setZeroTimeoutResult .progress");
-    let num = 1;
-    let result = 0;
-    setZeroTimeout(function loop() {
-        result += num;
-        domResult.innerText = result;
-        dommProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
-        if (num++ < MAX_NUM) {
-            setZeroTimeout(loop);
-        }
-    });
+function createRunFunc(func, name = func.name) {
+    return function() {
+        const domResult = document.querySelector(`#${name}Result .result`);
+        const domProgress = document.querySelector(`#${name}Result .progress`);
+        const domTime = document.querySelector(`#${name}Result .time`);
+        domTime.innerText = "";
+        let num = 1;
+        let result = 0;
+        const startTime = performance.now();
+        func(function loop() {
+            result += num;
+            domResult.innerText = result;
+            domProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
+            if (num++ < MAX_NUM) {
+                func(loop);
+            }
+            else {
+                domTime.innerText = Math.floor((performance.now() - startTime) * 1000) / 1000 + "ms";
+            }
+        });
+    };
 }
 
-function wait0ScriptRun() {
-    const domResult = document.querySelector("#wait0ScriptResult .result");
-    const dommProgress = document.querySelector("#wait0ScriptResult .progress");
-    let num = 1;
-    let result = 0;
-    wait0Script(function loop() {
-        result += num;
-        domResult.innerText = result;
-        dommProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
-        if (num++ < MAX_NUM) {
-            wait0Script(loop);
-        }
-    });
-}
-
-function wait0FileReader1Run() {
-    const domResult = document.querySelector("#wait0FileReader1Result .result");
-    const dommProgress = document.querySelector("#wait0FileReader1Result .progress");
-    let num = 1;
-    let result = 0;
-    wait0FileReader1(function loop() {
-        result += num;
-        domResult.innerText = result;
-        dommProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
-        if (num++ < MAX_NUM) {
-            wait0FileReader1(loop);
-        }
-    });
-}
-
-function wait0FileReader2Run() {
-    const domResult = document.querySelector("#wait0FileReader2Result .result");
-    const dommProgress = document.querySelector("#wait0FileReader2Result .progress");
-    let num = 1;
-    let result = 0;
-    wait0FileReader2(function loop() {
-        result += num;
-        domResult.innerText = result;
-        dommProgress.value = Math.floor((num / MAX_NUM) * 1000) / 10;
-        if (num++ < MAX_NUM) {
-            wait0FileReader2(loop);
-        }
-    });
-}
-
-
+const setZeroTimeoutRun = createRunFunc(setZeroTimeout);
+const wait0ScriptRun = createRunFunc(wait0Script, "wait0Script");
+const wait0FileReader1Run = createRunFunc(wait0FileReader1, "wait0FileReader1");
+const wait0FileReader2Run = createRunFunc(wait0FileReader2, "wait0FileReader2");
 
 
