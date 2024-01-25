@@ -56,7 +56,6 @@ const MAX_NUM = 10000000;
     const dommProgress = document.querySelector("#progress4");
     let num = 1;
     let result = 0;
-    debugger;
     wait0FileReader1(function loop() {
         result += num;
         domResult.innerText = result;
