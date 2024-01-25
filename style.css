@@ -3,6 +3,10 @@ progress {
   display: block;
 }
 
+#run {
+  margin: 8px 0;
+}
+
 .marquee-container {
   position: relative;
   height: 32px;

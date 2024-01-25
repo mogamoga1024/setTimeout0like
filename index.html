@@ -48,6 +48,12 @@
     <progress class="progress" value="0" max="100"></progress>
     <div class="result"></div>
   </div>
+  <div style="margin-top: 8px;">
+    超手抜き実装なんで、停止できません。<br>
+    後、実行中に実行ボタン押さないように。<br>
+    律儀にバグらないように実装するのはかなり面倒くさいからね。OK？<br>
+    実行中に再実行したいときはページをリロードしましょう。<br>
+  </div>
   <hr>
   <h2>UIが固まらないかの実験</h2>
   <div class="marquee-container">
@@ -58,9 +64,6 @@
   <button onclick="document.querySelector('#num3').innerText = Number(document.querySelector('#num1').value) + Number(document.querySelector('#num2').value)">足す！</button>
   <div id="num3"></div>
   <button onclick="alert('Hello, World!!')">アラート！</button><br>
-  <h3>ラングトンの蟻</h3>
-  <canvas id="canvas"></canvas>
-  <script src="ant.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
