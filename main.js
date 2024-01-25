@@ -4,7 +4,7 @@
 //     domResult.innerText = result0;
 // }
 
-const MAX_NUM = 10000;
+const MAX_NUM = 10000000;
 
 const domResult1 = document.querySelector("#result1");
 const dommProgress1 = document.querySelector("#progress1");
@@ -14,7 +14,7 @@ setTimeout(function loop(num = 1, maxNum = MAX_NUM) {
     domResult1.innerText = result1;
     dommProgress1.innerText = Math.floor((num / maxNum) * 1000) / 10 + "%";
     if (num < maxNum) {
-        setTimeout(() => loop(++num, maxNum));
+        setTimeout(() => loop(++num, maxNum), 0);
     }
 }, 0);
 
@@ -26,7 +26,7 @@ setZeroTimeout(function loop(num = 1, maxNum = MAX_NUM) {
     domResult2.innerText = result2;
     dommProgress2.innerText = Math.floor((num / maxNum) * 1000) / 10 + "%";
     if (num < maxNum) {
-        setTimeout(() => loop(++num, maxNum));
+        setZeroTimeout(() => loop(++num, maxNum));
     }
 });
 
