@@ -6,29 +6,55 @@
 
 const MAX_NUM = 10000000;
 
-const domResult1 = document.querySelector("#result1");
-const dommProgress1 = document.querySelector("#progress1");
-let result1 = 0;
-setTimeout(function loop(num = 1, maxNum = MAX_NUM) {
-    result1 += num;
-    domResult1.innerText = result1;
-    dommProgress1.innerText = Math.floor((num / maxNum) * 1000) / 10 + "%";
-    if (num < maxNum) {
-        setTimeout(() => loop(++num, maxNum), 0);
-    }
-}, 0);
+(function() {
+    const domResult = document.querySelector("#result1");
+    const dommProgress = document.querySelector("#progress1");
+    let num = 1;
+    let result = 0;
+    setTimeout(function loop() {
+        result += num;
+        domResult.innerText = result;
+        dommProgress.innerText = Math.floor((num / MAX_NUM) * 1000) / 10 + "%";
+        if (num++ < MAX_NUM) {
+            setTimeout(loop, 0);
+        }
+    }, 0);
+})();
 
-const domResult2 = document.querySelector("#result2");
-const dommProgress2 = document.querySelector("#progress2");
-let result2 = 0;
-setZeroTimeout(function loop(num = 1, maxNum = MAX_NUM) {
-    result2 += num;
-    domResult2.innerText = result2;
-    dommProgress2.innerText = Math.floor((num / maxNum) * 1000) / 10 + "%";
-    if (num < maxNum) {
-        setZeroTimeout(() => loop(++num, maxNum));
-    }
-});
+(function() {
+    const domResult = document.querySelector("#result2");
+    const dommProgress = document.querySelector("#progress2");
+    let num = 1;
+    let result = 0;
+    setZeroTimeout(function loop() {
+        result += num;
+        domResult.innerText = result;
+        dommProgress.innerText = Math.floor((num / MAX_NUM) * 1000) / 10 + "%";
+        if (num++ < MAX_NUM) {
+            setZeroTimeout(loop);
+        }
+    });
+})();
+
+(function() {
+    const domResult = document.querySelector("#result3");
+    const dommProgress = document.querySelector("#progress3");
+    let num = 1;
+    let result = 0;
+    wait0Script(function loop() {
+        result += num;
+        domResult.innerText = result;
+        dommProgress.innerText = Math.floor((num / MAX_NUM) * 1000) / 10 + "%";
+        if (num++ < MAX_NUM) {
+            wait0Script(loop);
+        }
+    });
+})();
+
+(function() {
+
+})();
+
 
 
 
