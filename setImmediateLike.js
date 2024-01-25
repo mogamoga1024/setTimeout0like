@@ -13,7 +13,7 @@
 		f=document.createElement("script");
 		f.onload=a;f.src=u;h.appendChild(f)
 	}
-})([])
+})([]);
 
 //FileReader法
 (function(F){
@@ -22,7 +22,7 @@
 	this.wait0FileReader1=function(f){
 		F[F.length]=f;f=new FileReader;
 		f.onload=a;f.readAsArrayBuffer(b)}
-})([])
+})([]);
 //FileReader法2
 (function(F){
 	var b=new Blob([new Uint8Array(0)]),r=new FileReader;
@@ -32,7 +32,7 @@
 	this.wait0FileReader2=function(f){
 		F[F.length]=f;r.readAsArrayBuffer(b)
 	}
-})([])
+})([]);
 
 //Image法
 (function(F){
@@ -42,7 +42,7 @@
 		F[F.length]=f;f=new Image;
 		f.onload=a;f.src=s
 	}
-})([])
+})([]);
 //Image法2
 (function(F){
 	var i=new Image,s="data:image/gif;base64,R0lGODdhAQABAAAAAAA";
@@ -50,7 +50,7 @@
 		F[0]&&F.shift()();delete i.src
 	};
 	this.wait0Image2=function(f){F[F.length]=f;i.src=s}
-})([])
+})([]);
 
 //postMessage法
 (function(a){

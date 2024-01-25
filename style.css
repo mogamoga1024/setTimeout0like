@@ -1,3 +1,8 @@
+
+progress {
+  display: block;
+}
+
 .marquee-container {
   position: relative;
   height: 32px;
