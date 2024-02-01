@@ -7,6 +7,7 @@ const chkWait0FileReader2 = document.querySelector("#chkWait0FileReader2");
 const chkWait0Image1 = document.querySelector("#chkWait0Image1");
 const chkWait0Image2 = document.querySelector("#chkWait0Image2");
 const chkWait0PostMessage = document.querySelector("#chkWait0PostMessage");
+const chkRequestAnimationFrameMessage = document.querySelector("#chkRequestAnimationFrameMessage");
 
 const setTimeoutResult = document.querySelector("#setTimeoutResult");
 const setZeroTimeoutResult = document.querySelector("#setZeroTimeoutResult");
@@ -16,6 +17,7 @@ const wait0FileReader2Result = document.querySelector("#wait0FileReader2Result")
 const wait0Image1Result = document.querySelector("#wait0Image1Result");
 const wait0Image2Result = document.querySelector("#wait0Image2Result");
 const wait0PostMessageResult = document.querySelector("#wait0PostMessageResult");
+const requestAnimationFrameResult = document.querySelector("#requestAnimationFrameResult");
 
 display(setTimeoutResult, false);
 display(setZeroTimeoutResult, false);
@@ -25,6 +27,7 @@ display(wait0FileReader2Result, false);
 display(wait0Image1Result, false);
 display(wait0Image2Result, false);
 display(wait0PostMessageResult, false);
+display(requestAnimationFrameResult, false);
 
 function run() {
     display(setTimeoutResult, chkSetTimeout.checked);
@@ -35,6 +38,7 @@ function run() {
     display(wait0Image1Result, chkWait0Image1.checked);
     display(wait0Image2Result, chkWait0Image2.checked);
     display(wait0PostMessageResult, chkWait0PostMessage.checked);
+    display(requestAnimationFrameResult, chkRequestAnimationFrameMessage.checked);
 
     if (chkSetTimeout.checked) setTimeoutRun();
     if (chkSetZeroTimeout.checked) setZeroTimeoutRun();
@@ -44,6 +48,7 @@ function run() {
     if (chkWait0Image1.checked) wait0Image1Run();
     if (chkWait0Image2.checked) wait0Image2Run();
     if (chkWait0PostMessage.checked) wait0PostMessageRun();
+    if (chkRequestAnimationFrameMessage.checked) requestAnimationFrameRun();
 }
 
 function display(dom, shouldDispaly) {

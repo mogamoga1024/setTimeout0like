@@ -52,5 +52,5 @@ const wait0FileReader2Run = createRunFunc(wait0FileReader2, "wait0FileReader2");
 const wait0Image1Run = createRunFunc(wait0Image1, "wait0Image1");
 const wait0Image2Run = createRunFunc(wait0Image2, "wait0Image2");
 const wait0PostMessageRun = createRunFunc(wait0PostMessage, "wait0PostMessage");
-
+const requestAnimationFrameRun = createRunFunc(requestAnimationFrame);
 

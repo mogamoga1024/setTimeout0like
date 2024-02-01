@@ -30,6 +30,9 @@
     <div>
       <input type="checkbox" id="chkWait0PostMessage"><label for="chkWait0PostMessage">wait0PostMessage(fn)</label>
     </div>
+    <div>
+      <input type="checkbox" id="chkRequestAnimationFrameMessage"><label for="chkRequestAnimationFrameMessage">requestAnimationFrame(fn)</label>
+    </div>
   </div>
   <button id="run" onclick="run()">実行！</button><br>
   <div id="setTimeoutResult">
@@ -69,6 +72,11 @@
   </div>
   <div id="wait0PostMessageResult">
     <b>wait0PostMessage(fn)</b>
+    <progress class="progress" value="0" max="100"></progress>
+    <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
+  </div>
+  <div id="requestAnimationFrameResult">
+    <b>requestAnimationFrame(fn)</b>
     <progress class="progress" value="0" max="100"></progress>
     <span class="result"></span><span class="time" style="margin-left: 10px;"></span>
   </div>
